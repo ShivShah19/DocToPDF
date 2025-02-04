@@ -1,0 +1,293 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOC to PDF Converter | Free Online Tool</title>
+    
+    <!-- Meta Tags -->
+    <meta name="description" content="Convert DOC and DOCX files to PDF for free. Fast, secure, and easy-to-use online tool. No registration required." />
+    <meta name="keywords" content="DOC to PDF, Word to PDF, free online converter, DOCX to PDF, convert documents, PDF converter tool" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Kushal Arora" />
+    <link rel="icon" href="/assets/images/doc-to-pdf-favicon.ico" type="image/x-icon" />
+
+    <!-- Open Graph (OG) Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="DOC to PDF Converter | Free Online Tool" />
+    <meta property="og:description" content="Convert DOC and DOCX files to PDF for free. Fast, secure, and easy-to-use online tool. No registration required." />
+    <meta property="og:url" content="https://www.ilovemypdfz.in/" />
+    <meta property="og:site_name" content="iLoveMyPDFz" />
+    <meta property="og:image" content="/assets/images/og.img-doctopdf.webp" />
+    <meta property="og:image:alt" content="Convert DOC to PDF Online Free" />
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="DOC to PDF Converter | Free Online Tool" />
+    <meta name="twitter:description" content="Convert DOC and DOCX files to PDF for free. Fast, secure, and easy-to-use online tool. No registration required." />
+    <meta name="twitter:image" content="/assets/images/twitter-card-doctopdf.webp" />
+    <meta name="twitter:image:alt" content="Convert DOC to PDF Online Free" />
+
+    <!-- Additional Improvements -->
+    <link rel="canonical" href="https://www.ilovemypdfz.in/" />
+
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "DOC to PDF Converter - iLoveMyPDFz",
+        "description": "Convert DOC and DOCX files to PDF for free. No hidden costs, no sign-up required.",
+        "url": "https://www.ilovemypdfz.in",
+        "image": "assets/images/og-image.png",
+        "publisher": {
+            "@type": "Organization",
+            "name": "iLoveMyPDFz",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "assets/images/logo.png"
+            }
+        }
+    }
+    </script>
+
+    <!-- css style link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- JS libraries link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.4.0/purify.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+</head>
+<body>
+    <!-- header section  -->
+    <header>
+        <div class="header-main">
+            <div class="header-contained">
+                <div class="logo">
+                    <a href="https://ilovemypdfz.in/"><img src="assets/images/logo.png" alt="Doc-To-Pdf Logo"></a>
+                </div>
+                <div class="selecter">
+                    <select name="lang" id="lang">
+                        <option value="en" data-flag="us">English</option>
+                        <option value="hi" data-flag="in">Hindi</option>
+                        <option value="fr" data-flag="fr">Français</option>
+                        <option value="es" data-flag="es">Español</option>
+                        <option value="it" data-flag="it">Italiano</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- main-section  -->
+    <div class="main">
+        <div class="brief">
+            <div id="title">DOC To PDF</div>
+             <h1>Welcome to iLoveMyPDFz.in – Your Effortless DOC to PDF Converter</h1>
+             <p>At <strong>iLoveMyPDFz.in</strong>, we make converting your DOC and DOCX files into high-quality PDFs quick, easy, and free. Whether you're a student looking to submit your assignments, a professional preparing reports, or simply someone organizing documents, our DOC to PDF converter tool provides a seamless and effortless way to transform your files into PDFs.</p>
+             <p>We understand the importance of accuracy and reliability, which is why our tool ensures that your DOC file is converted into a PDF while preserving all formatting, images, and tables. Whether you need to convert Word to PDF for work, school, or personal use, iLoveMyPDFz.in makes it easy to convert your documents anytime and from anywhere, without any hassle.</p>
+        </div>
+
+        <!-- Doc to PDF section  -->
+        <div class="doctopdf" id="doc-to-pdf">
+            <div class="upload-section">
+                <h2>Convert DOCX to PDF</h2>
+                <div class="file-upload">
+                    <form id="uploadForm" class="drop-area">
+                        <input type="file" id="fileInput" accept=".docx" hidden />
+                        <label for="fileInput" class="choose-file" id="fileLabel">Click Here to Select a File</label>
+                    </form>
+                </div>
+                <button id="convertBtn">Convert</button>
+                <div id="loading" style="display: none">Converting... Please wait.</div>
+                <div id="result" style="display: none">
+                    <p>Your PDF file is ready for download:</p>
+                    <a id="downloadLink" href="#">Download PDF</a>
+                </div>
+            </div>
+            
+        </div>
+    
+        <!-- content section  -->
+        <div class="content-section">
+            <div class="section">
+                <h2>Why Choose iLoveMyPDFz.in for Your DOC to PDF Conversions?</h2>
+            <div class="box-layout">
+                <div class="box">
+                    <h3>Free DOC to PDF Conversion:</h3>
+                    <p>Enjoy free access to our conversion tool. Convert as many files as you want—there are no hidden fees or subscription charges.</p>
+                </div>
+                <div class="box">
+                    <h3>Fast & Easy Conversion:</h3>
+                    <p>Our platform is designed to provide you with a seamless, effortless conversion process, transforming your DOC files into PDFs in just a few clicks.</p>
+                </div>
+                <div class="box">
+                    <h3>No Registration or Download Needed: </h3>
+                    <p>You don’t need to sign up or download any software to start converting. Simply visit iLoveMyPDFz.in and get started immediately.</p>
+                </div>
+                <div class="box">
+                    <h3>High-Quality PDF Output:</h3>
+                    <p>We guarantee that all your DOC files, no matter how complex, will be converted into PDFs without any loss in formatting or content quality. </p>
+                </div>
+            </div>
+            </div>
+            <div class="section">
+                <h2>How It Works – Converting DOC to PDF in 3 Simple Steps</h2>
+            <div class="how-it-works">
+            <div class="how-it-works-img">
+                <div class="image">
+                <img src="assets/images/doc-to-pdf.png" alt="">
+             </div>
+             <button class="image-btn" onclick="location.href='#doc-to-pdf'">Convert</button>
+            </div>
+            <div class="how-it-works-content">
+            <h3>1. Upload Your DOC or DOCX File</h3>
+            <p>It’s easy! Simply click the “Upload" button and select your DOC or DOCX file from your computer, laptop, or mobile device. The upload process is fast, making this the easiest part of the entire conversion.</p>
+            <h3>2. Convert Your DOC to PDF</h3>
+            <p>After uploading, our system will quickly start converting your DOC file into PDF. The entire process happens in real time, so you don’t have to wait long.</p>
+            <h3>3. Download Your PDF Effortlessly</h3>
+            <p>Once your conversion is complete, your PDF will be ready for download in seconds. It’s that simple! You can save it directly to your device, ensuring the process is as seamless as possible.<p>
+            </div>
+            </div>
+            </div>
+            <div class="section">
+                <h2>Why iLoveMyPDFz.in is the Best DOC to PDF Converter</h2>
+            <p>At iLoveMyPDFz.in, we focus on delivering free, fast, and easy conversion for everyone. Here are some reasons why our tool stands out among the many available online:</p>
+                <ul>
+                <li><strong>Free to Use:</strong>There are no fees, hidden charges, or limitations. You can convert DOC files to PDF as often as you need, completely free.</li>
+                <li><strong>High-Speed Conversions:</strong> Get your files converted quickly, without any delays. Our tool is optimized for both small and large DOC files, so you can rely on us to handle your document conversions effortlessly.</li>
+                <li><strong>Seamless Experience:</strong> From start to finish, the entire process is designed to be simple and smooth. With just a few clicks, you can upload your DOC file, convert it to PDF, and download it—all without needing any extra steps.</li>
+                <li><strong>No Software Installation:</strong> Because our tool is completely online, you won’t have to worry about downloading or installing anything. It’s a hassle-free solution for converting your files.</li>
+                <li><strong>Works on Any Device:</strong> Whether you’re at home on a desktop computer, on-the-go with your mobile device, or working remotely, our tool works seamlessly across all devices and platforms.</li>
+                </ul>
+            </div>
+                <div class="section">
+                    <h2>User Testimonials: Hear From Our Satisfied Users</h2>
+                    <p>We’ve made it our mission to provide a tool that is not only free but also reliable and easy to use. Here’s what some of our satisfied customers have to say about their experience with iLoveMyPDFz.in:</p>
+                    <div class="testimonial">
+                    <div class="review">
+                        <p class="review-desc">"Converting my reports from DOC to PDF was so quick and easy with iLoveMyPDFz.in! I didn’t have to sign up or download anything, and the conversion was done in seconds. This is the best converter I’ve ever used."</p>
+                        <div class="reviewer">
+                            <p class="reviewer-name">Ananya R., Pune</p>
+                        </div>
+                    </div>
+                    <div class="review">
+                        <p class="review-desc">"I needed to convert my lecture notes to PDF, and iLoveMyPDFz.in made the process effortless. No ads, no pop-ups, just a simple, fast tool that does the job every time."</p>
+                        <div class="reviewer">
+                            <p class="reviewer-name">Vishal P., Chennai</p>
+                        </div>
+                    </div>
+                    <div class="review">
+                        <p class="review-desc">"I work as a freelance writer, and I’ve been using iLoveMyPDFz.in for months now. It’s always reliable, fast, and free—exactly what I need!" </p>
+                        <div class="reviewer">
+                            <p class="reviewer-name">Sneha M., Bangalore</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <!-- FAQs section  -->
+            <h2 style="text-align: center; padding: 15px ;">Frequently Asked Questions (FAQs)</h2>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <button class="accordion-button"><h3>1. Is the DOC to PDF conversion free?</h3></button>
+                    <div class="panel">
+                        <p>Yes, iLoveMyPDFz.in offers free DOC to PDF conversion with no hidden fees or sign-up requirements.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button"><h3>2. How do I convert a DOC file to PDF?</h3></button>
+                    <div class="panel">
+                        <p>Simply upload your DOC or DOCX file to our website, and the conversion will happen automatically. Once complete, you can easily download your PDF.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button"><h3>3. Do I need to create an account to use the converter?</h3></button>
+                    <div class="panel">
+                        <p>No, there’s no need to create an account. Our tool is effortless to use and does not require any registration.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button"><h3>4. How long does the conversion take?</h3></button>
+                    <div class="panel">
+                        <p>The conversion time depends on the size of your DOC file. Typically, the process takes only a few seconds, but larger files may take a minute or two.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button"><h3>5. Is my data secure when using this tool?</h3></button>
+                    <div class="panel">
+                        <p>Yes! We prioritize your privacy. All files are processed securely, and we ensure they are deleted after the conversion. Your data remains private and safe.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button"><h3>6. Can I convert multiple DOC files at once?</h3></button>
+                    <div class="panel">
+                        <p>At this time, our tool supports converting one DOC file at a time. However, you can quickly convert multiple documents by repeating the process.</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-button"><h3>7. Can I convert DOC files on my mobile device?</h3></button>
+                    <div class="panel">
+                        <p>Absolutely! Our tool is optimized for mobile devices, so you can seamlessly convert DOC files to PDFs from your smartphone or tablet.</p>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </div>
+
+    <!-- Footer  -->
+     <footer>
+        <div class="footer-section">
+            <div class="footer-main">
+                <div class="footer-logo">
+                    <img src="assets/images/doctopdf-footer-logo.png" alt="Doc-To-Pdf Logo">
+                </div>
+                <p class="footer-title">Start Converting Your DOC Files to PDF Today!</p>
+                <p class="footer-desc">Don’t let document conversions take up valuable time. With iLoveMyPDFz.in, you can effortlessly convert your DOC files to PDFs in just a few clicks. It’s free, easy, and available whenever you need it. Try it now and experience the seamless and fast way to convert your files.</p>
+            </div>
+            <div class="footer-nav">
+                <ul>
+                    <li>Disclaimer</li>
+                    <li>Terms and Conditions</li>
+                    <li>Privacy Policy</li>
+                </ul>
+            </div>
+            <div class="copyright">
+                © 2024 <a href="#">iLoveMyPDFz.in</a> | All Rights Reserved.
+            </div>
+        </div>
+     </footer>
+
+     <!-- FAQs script  -->
+     <script>
+        var acc = document.getElementsByClassName("accordion-button");
+
+        for (var i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                var panels = document.getElementsByClassName("panel");
+                for (var j = 0; j < panels.length; j++) {
+                    if (panels[j] !== this.nextElementSibling) {
+                        panels[j].style.display = "none";
+                        acc[j].classList.remove("active");
+                    }
+                }
+
+                // Toggle the clicked panel
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                    this.classList.remove("active");
+                } else {
+                    panel.style.display = "block";
+                    this.classList.add("active");
+                }
+            });
+        }
+    </script>
+     <script defer src="/js/script.js"></script>
+</body>
+</html>

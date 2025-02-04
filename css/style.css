@@ -1,0 +1,557 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 20px 0;
+}
+
+h2 {
+    font-size: 1.6rem;
+    margin: 20px 0;
+}
+
+h3 {
+    font-size: 1.3rem;
+    margin: 13px 0;
+}
+
+h4 {
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+/* header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: #fff;
+    box-shadow: 0 0 1px #00000052, 0 2px 4px #0000003d;
+}
+
+.header-contained {
+    max-width: 1440px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 200px;
+    height: auto;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.selecter {
+    position: relative;
+    width: 150px;
+}
+
+.selecter {
+    position: relative;
+    width: 150px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    appearance: none;
+    /* Removes default arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.selecter::after {
+    content: '\25BC';
+    /* Downward arrow symbol */
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 12px;
+    color: #333;
+}
+
+select:hover {
+    border-color: #888;
+}
+
+select:focus {
+    border-color: #0F2F76;
+    box-shadow: 0 0 3px #0f3076;
+}
+
+option:hover {
+    background-color: #ff3c00;
+    color: white;
+}
+
+/* body */
+.main {
+    max-width: 1290px;
+    background-color: #fff;
+    margin: 6rem auto 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+#title::before {
+    content: '';
+    display: inline-block;
+    width: 100px;
+    height: 48px;
+    background-image: url('/assets/images/doc-to-pdf.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 10px;
+}
+
+.brief,
+.content-section {
+    padding: 10px;
+    gap: 20px;
+}
+
+
+.box-layout {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    row-gap: 20px;
+    flex-wrap: wrap;
+}
+
+.box-layout .box {
+    padding: 10px;
+    background-color: #f4f4f4;
+    text-align: center;
+    border-radius: 5px;
+    max-width: 600px;
+}
+
+.doctopdf {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 60vh; */
+    margin-bottom: 20px;
+}
+
+.upload-section {
+    max-width: 800px;
+    width: 100%;
+    background-color: #F2F6FF;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Drag-and-drop area styling */
+.drop-area {
+    width: 100%;
+    height: 300px;
+    border: 1px dashed #0F2F76;
+    border-radius: 8px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    margin: 20px 0;
+}
+
+.drop-area p {
+    font-size: 1.1rem;
+    color: #5c5d5e;
+    margin: 0;
+}
+
+.drop-area:hover {
+    background-color: #f4f4f4;
+    border-color: red;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #0F2F76;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Loading and result styling */
+#loading {
+    text-align: center;
+    font-size: 16px;
+    display: none;
+}
+
+#result {
+    margin-top: 20px;
+    text-align: center;
+    display: none;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.doctopdf a {
+    color: #ff3c00;
+}
+
+.content-section ul li {
+    line-height: 2;
+    margin-left: 30px;
+}
+
+.section {
+    padding: 12px 0;
+}
+
+.testimonial {
+    display: flex;
+    gap: 20px;
+}
+
+.review {
+    padding: 15px;
+    background-color: #f4f4f4;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+
+.review-desc {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 10px 0 0 0;
+}
+
+.reviewer-name {
+    color: #0F2F76;
+    font-weight: 600;
+    margin: 10px 0 0 0;
+}
+
+.how-it-works {
+    display: flex;
+    background-color: #F2F6FF;
+    color: #333;
+    padding: 30px 40px 20px 40px;
+    gap: 60px;
+    border-radius: 10px;
+}
+
+.image {
+    width: 300px;
+}
+
+.image img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.how-it-works h3 {
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+.how-it-works p {
+    margin: 5px 0;
+}
+
+.how-it-works-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.how-it-works-img {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+
+/* Accordion Container */
+.accordion {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1040px;
+    margin: 0 auto;
+}
+
+/* Accordion button (question) */
+.accordion-button {
+    color: white;
+    cursor: pointer;
+    padding: 20px;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 8px;
+}
+
+/* Accordion panel (answer) */
+.panel {
+    padding: 15px;
+    display: none;
+    font-size: 14px;
+    color: #555;
+}
+
+.panel p {
+    margin: 0;
+}
+
+/* Show panel when active */
+.panel.show {
+    display: block;
+}
+
+/* Transition effects */
+.accordion-button,
+.panel {
+    transition: all 0.4s ease;
+}
+
+/* Style for the sign (+ or -) */
+.accordion-button::after {
+    content: "+";
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.accordion-button.active::after {
+    content: "-";
+}
+
+button h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+
+/* footer  */
+footer {
+    max-width: 100%;
+    background-color: #0F2F76;
+    color: #fff;
+    margin-top: 0.8rem;
+}
+
+.footer-section {
+    max-width: 1290px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 5px 0;
+}
+
+.footer-main {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
+}
+
+.footer-title {
+    color: #F2F6FF;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 0%;
+}
+
+.footer-desc {
+    font-size: 0.95rem;
+}
+
+.footer-logo {
+    width: 200px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.footer-nav {
+    border-bottom: 1px solid #fff;
+}
+
+.footer-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.footer-nav ul li {
+    border-right: 1px solid #fff;
+    padding: 0 15px;
+}
+
+.footer-nav ul li:last-child {
+    border: none;
+}
+
+.footer-section .copyright {
+    padding: 20px 0;
+}
+
+@media (max-width:476px) {
+    h1 {
+        font-size: 1.6rem;
+        margin: 20px 0;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+        margin: 20px 0;
+    }
+
+    h3 {
+        font-size: 1rem;
+        margin: 13px 0;
+    }
+
+    h4 {
+        font-size: 0.9rem;
+        margin: 10px 0;
+    }
+
+    p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin: 20px 0;
+    }
+
+    .header-contained {
+        padding: 10px;
+    }
+
+    .logo {
+        width: 140px;
+        height: auto;
+    }
+
+    .section {
+        padding: 8px 0;
+    }
+
+    #title {
+        font-size: 2rem;
+    }
+
+    .main {
+        margin: 4rem auto 0;
+    }
+
+    .image {
+        width: auto;
+    }
+
+    .how-it-works {
+        padding: 20px;
+        gap: 30px;
+    }
+
+    .box-layout {
+        flex-wrap: wrap;
+    }
+
+    .testimonial,
+    .how-it-works {
+        flex-wrap: wrap;
+    }
+
+    button h3 {
+        margin: 0;
+        font-size: 0.9rem;
+    }
+
+    .footer-section {
+        font-size: 0.85rem;
+        padding: 10px 0;
+    }
+
+    .footer-desc {
+        font-size: 0.85rem;
+    }
+
+    .footer-nav ul {
+        margin: 15px 0;
+    }
+}
